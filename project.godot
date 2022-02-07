@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="Nokia3310Jam4"
+run/main_scene="res://screens/MainScreen.tscn"
 config/icon="res://icon.png"
 
 [display]
