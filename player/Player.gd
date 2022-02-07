@@ -19,8 +19,18 @@ func _unhandled_input(event):
 		if event.is_action_pressed(dir):
 			move(dir)
 
+
 func move(dir):
 	ray.cast_to = inputs[dir] * tile_size
 	ray.force_raycast_update()
 	if !ray.is_colliding():
 		position += inputs[dir] * tile_size
+
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("build"):
+		print("Build Open...")
+	if Input.is_action_just_pressed("upgrade"):
+		print("Upgrades Open...")
+	if Input.is_action_just_pressed("rotate"):
+		print("Rotating Object...")
