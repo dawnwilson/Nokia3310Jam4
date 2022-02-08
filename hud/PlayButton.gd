@@ -1,10 +1,10 @@
 extends TextureButton
 
 
+var game = preload("res://Game.tscn")
+
 func _ready() -> void:
 	grab_focus()
 
 func _on_PlayButton_pressed() -> void:
-	# TODO: Load Game Scene
-	print("Load Game Scene...")
-	pass
+	get_tree().change_scene_to(game)

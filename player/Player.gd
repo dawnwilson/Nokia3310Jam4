@@ -27,10 +27,4 @@ func move(dir):
 		position += inputs[dir] * tile_size
 
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("build"):
-		print("Build Open...")
-	if Input.is_action_just_pressed("upgrade"):
-		print("Upgrades Open...")
-	if Input.is_action_just_pressed("rotate"):
-		print("Rotating Object...")
+
