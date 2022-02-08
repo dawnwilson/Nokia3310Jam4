@@ -41,38 +41,39 @@ __meta__ = {
 }
 
 [node name="ScrapsLabel" type="Label" parent="TextureRect/HBoxContainer"]
-margin_left = 12.0
+margin_left = 9.0
 margin_top = 1.0
-margin_right = 12.0
+margin_right = 15.0
 margin_bottom = 9.0
 custom_colors/font_color = Color( 0.262745, 0.321569, 0.239216, 1 )
 custom_fonts/font = ExtResource( 11 )
+text = "$:"
 valign = 1
 
 [node name="MineButton" type="TextureButton" parent="TextureRect/HBoxContainer"]
-margin_left = 16.0
-margin_right = 26.0
+margin_left = 19.0
+margin_right = 29.0
 margin_bottom = 10.0
 texture_normal = ExtResource( 4 )
 texture_focused = ExtResource( 3 )
 
 [node name="BarricadeButton" type="TextureButton" parent="TextureRect/HBoxContainer"]
-margin_left = 30.0
-margin_right = 40.0
+margin_left = 33.0
+margin_right = 43.0
 margin_bottom = 10.0
 texture_normal = ExtResource( 6 )
 texture_focused = ExtResource( 5 )
 
 [node name="TurretButton" type="TextureButton" parent="TextureRect/HBoxContainer"]
-margin_left = 44.0
-margin_right = 54.0
+margin_left = 47.0
+margin_right = 57.0
 margin_bottom = 10.0
 texture_normal = ExtResource( 8 )
 texture_focused = ExtResource( 7 )
 
 [node name="LaserButton" type="TextureButton" parent="TextureRect/HBoxContainer"]
-margin_left = 58.0
-margin_right = 68.0
+margin_left = 61.0
+margin_right = 71.0
 margin_bottom = 10.0
 texture_normal = ExtResource( 9 )
 texture_focused = ExtResource( 10 )

@@ -11,12 +11,8 @@ onready var scrapsLabel = $TextureRect/HBoxContainer/ScrapsLabel
 
 var mine = preload("res://weapons/Mine.tscn")
 var barricade = preload("res://weapons/Barricade.tscn")
-var turret
-var laser
-
-
-func _ready() -> void:
-	updateScrapsLabel(Global.scraps)
+var turret = preload("res://weapons/Turret.tscn")
+var laser = preload("res://weapons/Laser.tscn")
 
 
 func updateScrapsLabel(amount) -> void:
@@ -24,6 +20,7 @@ func updateScrapsLabel(amount) -> void:
 
 
 func focusOnBuild() -> void:
+	updateScrapsLabel(Global.scraps)
 	$TextureRect/HBoxContainer/MineButton.grab_focus()
 
 
