@@ -2,9 +2,7 @@ extends Node2D
 
 onready var buildTaskBar := $TaskBar/BuildMenu
 var isBuildOpen = false
-var scraps : int = 100
 
-#connect build weapon signals
 
 func _ready() -> void:
 	buildTaskBar.visible = false
@@ -26,16 +24,18 @@ func _process(delta: float) -> void:
 
 
 func buildWeapon(weaponType, weaponPrice : int) -> void:
-	if weaponPrice <= scraps:
+	if weaponPrice <= Global.scraps:
 		var newWeapon = weaponType.instance()
 		var position = $Player.position
 		if canBuildCheck():
 			newWeapon.position = position
 			$Weapons.add_child(newWeapon)
-			scraps -= weaponPrice
-			print(scraps)
+			Global.scraps -= weaponPrice
+			var buildMenu = $TaskBar/BuildMenu
+			buildMenu.updateScrapsLabel(Global.scraps)
 		else:
 			print("Can't Build There!")
+
 
 func canBuildCheck() -> bool:
 	return Global.canBuild

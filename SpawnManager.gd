@@ -1,7 +1,6 @@
 extends Node2D
 
 onready var enemy = preload("res://enemies/Enemy.tscn")
-
 onready var spawners : Array = $Spawners.get_children()
 
 

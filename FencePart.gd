@@ -1,6 +1,5 @@
 extends Area2D
 
-
 signal gameOver
 
 export var fullTexture : Texture
