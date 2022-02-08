@@ -24,17 +24,17 @@ func _process(delta: float) -> void:
 
 
 func buildWeapon(weaponType, weaponPrice : int) -> void:
-	if weaponPrice <= Global.scraps:
+	if weaponPrice <= Global.getScraps():
 		var newWeapon = weaponType.instance()
 		var position = $Player.position
 		if canBuildCheck():
 			newWeapon.position = position
 			$Weapons.add_child(newWeapon)
-			Global.scraps -= weaponPrice
-			var buildMenu = $TaskBar/BuildMenu
-			buildMenu.updateScrapsLabel(Global.scraps)
+			Global.setScraps(-weaponPrice)
 		else:
 			print("Can't Build There!")
+	else:
+		print("You don't have enough scraps to build that!")
 
 
 func canBuildCheck() -> bool:

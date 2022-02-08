@@ -138,6 +138,7 @@ brokenTexture = ExtResource( 14 )
 [node name="TaskBar" parent="." instance=ExtResource( 19 )]
 margin_top = 36.0
 margin_bottom = 36.0
+script = null
 
 [node name="BuildMenu" parent="TaskBar" instance=ExtResource( 17 )]
 anchor_top = 1.0

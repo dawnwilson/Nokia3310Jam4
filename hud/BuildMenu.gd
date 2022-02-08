@@ -7,12 +7,17 @@ const BARRICADE_PRICE := 40
 const TURRET_PRICE := 60
 const LASER_PRICE := 80
 
-onready var scrapsLabel = $TextureRect/HBoxContainer/ScrapsLabel
+var buildMenu
 
 var mine = preload("res://weapons/Mine.tscn")
 var barricade = preload("res://weapons/Barricade.tscn")
 var turret = preload("res://weapons/Turret.tscn")
 var laser = preload("res://weapons/Laser.tscn")
+
+onready var scrapsLabel = $TextureRect/HBoxContainer/ScrapsLabel
+
+func _ready() -> void:
+	Global.connect("adjustedScraps", self, "updateScrapsLabel")
 
 
 func updateScrapsLabel(amount) -> void:

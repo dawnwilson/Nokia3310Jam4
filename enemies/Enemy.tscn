@@ -22,4 +22,5 @@ autostart = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 
+[connection signal="tree_exiting" from="." to="." method="_on_Enemy_tree_exiting"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
