@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/Weapons/Mine2.png" type="Texture" id=1]
+[ext_resource path="res://assets/Weapons/Mine1.png" type="Texture" id=2]
+[ext_resource path="res://weapons/Mine.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 2.0
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[node name="Mine" type="Area2D"]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "idle"
+playing = true
+
+[connection signal="body_entered" from="." to="." method="_on_Mine_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Mine_body_exited"]

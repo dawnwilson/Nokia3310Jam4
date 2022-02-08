@@ -14,6 +14,10 @@ config/name="Nokia3310Jam4"
 run/main_scene="res://screens/MainScreen.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [display]
 
 window/size/width=84
@@ -91,6 +95,7 @@ rotate={
 2d_physics/layer_2="Enemy"
 2d_physics/layer_3="Background"
 2d_physics/layer_4="Fence"
+2d_physics/layer_5="Weapon"
 
 [physics]
 

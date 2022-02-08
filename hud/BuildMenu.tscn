@@ -2,14 +2,14 @@
 
 [ext_resource path="res://assets/TaskBarBG.png" type="Texture" id=1]
 [ext_resource path="res://hud/BuildMenu.gd" type="Script" id=2]
-[ext_resource path="res://assets/Icon_Mine_Focus.png" type="Texture" id=3]
-[ext_resource path="res://assets/Icon_Mine_Normal.png" type="Texture" id=4]
-[ext_resource path="res://assets/Icon_Barricade_Focus.png" type="Texture" id=5]
-[ext_resource path="res://assets/Icon_Barricade_Normal.png" type="Texture" id=6]
-[ext_resource path="res://assets/Icon_Turret_Focus.png" type="Texture" id=7]
-[ext_resource path="res://assets/Icon_Turret_Normal.png" type="Texture" id=8]
-[ext_resource path="res://assets/Icon_Laser_Normal.png" type="Texture" id=9]
-[ext_resource path="res://assets/Icon_Laser_Focus.png" type="Texture" id=10]
+[ext_resource path="res://assets/Menu Icons/Icon_Mine_Focus.png" type="Texture" id=3]
+[ext_resource path="res://assets/Menu Icons/Icon_Mine_Normal.png" type="Texture" id=4]
+[ext_resource path="res://assets/Menu Icons/Icon_Barricade_Focus.png" type="Texture" id=5]
+[ext_resource path="res://assets/Menu Icons/Icon_Barricade_Normal.png" type="Texture" id=6]
+[ext_resource path="res://assets/Menu Icons/Icon_Turret_Focus.png" type="Texture" id=7]
+[ext_resource path="res://assets/Menu Icons/Icon_Turret_Normal.png" type="Texture" id=8]
+[ext_resource path="res://assets/Menu Icons/Icon_Laser_Normal.png" type="Texture" id=9]
+[ext_resource path="res://assets/Menu Icons/Icon_Laser_Focus.png" type="Texture" id=10]
 
 [node name="BuildMenu" type="Control"]
 anchor_right = 1.0
@@ -66,3 +66,8 @@ margin_right = 76.0
 margin_bottom = 10.0
 texture_normal = ExtResource( 9 )
 texture_focused = ExtResource( 10 )
+
+[connection signal="pressed" from="TextureRect/HBoxContainer/MineButton" to="." method="_on_MineButton_pressed"]
+[connection signal="pressed" from="TextureRect/HBoxContainer/BarricadeButton" to="." method="_on_BarricadeButton_pressed"]
+[connection signal="pressed" from="TextureRect/HBoxContainer/TurretButton" to="." method="_on_TurretButton_pressed"]
+[connection signal="pressed" from="TextureRect/HBoxContainer/LaserButton" to="." method="_on_LaserButton_pressed"]

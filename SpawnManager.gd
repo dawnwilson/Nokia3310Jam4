@@ -9,4 +9,3 @@ func _ready() -> void:
 	var newEnemy = enemy.instance()
 	newEnemy.position = spawners[0].position
 	$Enemies.add_child(newEnemy)
-	print(spawners)
