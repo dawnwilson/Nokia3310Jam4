@@ -6,6 +6,7 @@ export var fullTexture : Texture
 export var brokenTexture : Texture
 
 onready var sprite := $Sprite
+onready var audioPlayer := $AudioStreamPlayer
 
 var health = 1
 
@@ -22,6 +23,7 @@ func _on_FencePart_body_entered(body: Node) -> void:
 		health -= 1
 		sprite.texture = brokenTexture
 		body.queue_free()
+		audioPlayer.play()
 		# TODO: instance explosion
 	elif health == 0:
 		body.queue_free()

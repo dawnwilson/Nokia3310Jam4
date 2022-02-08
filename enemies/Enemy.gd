@@ -1,6 +1,9 @@
 extends KinematicBody2D
 
+
 onready var ray = $RayCast2D
+onready var audioPlayer = $AudioStreamPlayer
+
 var tile_size = 6
 const ENEMY_WORTH := 25
 
@@ -11,6 +14,7 @@ func _ready():
 
 func _on_Timer_timeout() -> void:
 	position += Vector2.LEFT * tile_size
+	audioPlayer.play()
 
 
 func _on_Enemy_tree_exiting() -> void:

@@ -10,6 +10,7 @@ var level = 1
 func _on_Barricade_body_entered(body: Node) -> void:
 	if body.name == "Player":
 		Global.canBuild = false
+		Global.itemOn = Global.items.BARRICADE
 	if body.is_in_group("Enemies"):
 		if level == 3:
 			body.queue_free()
