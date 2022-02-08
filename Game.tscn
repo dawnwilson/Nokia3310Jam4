@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://enemies/Spawner.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://hud/BuildMenu.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Game.gd" type="Script" id=18]
 [ext_resource path="res://hud/TaskBar.tscn" type="PackedScene" id=19]
+[ext_resource path="res://SpawnManager.gd" type="Script" id=20]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 42, 3 )
@@ -74,26 +75,32 @@ shape = SubResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 21, 15 )
+collision_mask = 0
 
 [node name="SpawnManager" type="Node2D" parent="."]
+script = ExtResource( 20 )
 
-[node name="Spawner1" parent="SpawnManager" instance=ExtResource( 2 )]
+[node name="Spawners" type="Node2D" parent="SpawnManager"]
+
+[node name="Spawner1" parent="SpawnManager/Spawners" instance=ExtResource( 2 )]
 position = Vector2( 78, 0 )
 
-[node name="Spawner2" parent="SpawnManager" instance=ExtResource( 2 )]
+[node name="Spawner2" parent="SpawnManager/Spawners" instance=ExtResource( 2 )]
 position = Vector2( 78, 6 )
 
-[node name="Spawner3" parent="SpawnManager" instance=ExtResource( 2 )]
+[node name="Spawner3" parent="SpawnManager/Spawners" instance=ExtResource( 2 )]
 position = Vector2( 78, 12 )
 
-[node name="Spawner4" parent="SpawnManager" instance=ExtResource( 2 )]
+[node name="Spawner4" parent="SpawnManager/Spawners" instance=ExtResource( 2 )]
 position = Vector2( 78, 18 )
 
-[node name="Spawner5" parent="SpawnManager" instance=ExtResource( 2 )]
+[node name="Spawner5" parent="SpawnManager/Spawners" instance=ExtResource( 2 )]
 position = Vector2( 78, 24 )
 
-[node name="Spawner6" parent="SpawnManager" instance=ExtResource( 2 )]
+[node name="Spawner6" parent="SpawnManager/Spawners" instance=ExtResource( 2 )]
 position = Vector2( 78, 30 )
+
+[node name="Enemies" type="Node2D" parent="SpawnManager"]
 
 [node name="Fence" type="Node2D" parent="."]
 

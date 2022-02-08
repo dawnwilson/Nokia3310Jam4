@@ -1,5 +1,6 @@
-extends Area2D
+extends KinematicBody2D
 
+onready var ray = $RayCast2D
 var tile_size = 6
 
 func _ready():

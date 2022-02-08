@@ -13,11 +13,9 @@ func _process(delta: float) -> void:
 		buildTaskBar.visible = true
 		isBuildOpen = true
 		buildTaskBar.focusOnBuild()
-		print("Build Open...")
 	elif Input.is_action_just_pressed("build") && isBuildOpen:
 		buildTaskBar.visible = false
 		isBuildOpen = false
-		print("Build Closed...")
 	if Input.is_action_just_pressed("upgrade"):
 		print("Upgrades Open...")
 	if Input.is_action_just_pressed("rotate"):
