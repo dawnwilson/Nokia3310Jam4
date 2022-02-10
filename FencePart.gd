@@ -13,6 +13,7 @@ var health = 1
 
 func _ready() -> void:
 	sprite.texture = fullTexture
+	connect("gameOver", owner, "gameOver")
 
 
 func _on_FencePart_body_entered(body: Node) -> void:

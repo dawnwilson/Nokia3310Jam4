@@ -8,7 +8,7 @@
 [ext_resource path="res://hud/UpgradeMenu.gd" type="Script" id=6]
 [ext_resource path="res://fonts/6px_8.tres" type="DynamicFont" id=11]
 
-[node name="Upgrade Menu" type="Control"]
+[node name="UpgradeMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 6 )
@@ -37,9 +37,8 @@ __meta__ = {
 }
 
 [node name="ScrapsLabel" type="Label" parent="TextureRect/HBoxContainer"]
-margin_left = 23.0
 margin_top = 1.0
-margin_right = 29.0
+margin_right = 6.0
 margin_bottom = 9.0
 custom_colors/font_color = Color( 0.262745, 0.321569, 0.239216, 1 )
 custom_fonts/font = ExtResource( 11 )
@@ -47,8 +46,8 @@ text = "$:"
 valign = 1
 
 [node name="BarricadeOptions" type="HBoxContainer" parent="TextureRect/HBoxContainer"]
-margin_left = 33.0
-margin_right = 57.0
+margin_left = 10.0
+margin_right = 34.0
 margin_bottom = 10.0
 
 [node name="Level2" type="TextureButton" parent="TextureRect/HBoxContainer/BarricadeOptions"]
@@ -58,6 +57,42 @@ texture_normal = ExtResource( 4 )
 texture_focused = ExtResource( 5 )
 
 [node name="Level3" type="TextureButton" parent="TextureRect/HBoxContainer/BarricadeOptions"]
+margin_left = 14.0
+margin_right = 24.0
+margin_bottom = 10.0
+texture_normal = ExtResource( 3 )
+texture_focused = ExtResource( 2 )
+
+[node name="TurretOptions" type="HBoxContainer" parent="TextureRect/HBoxContainer"]
+margin_left = 38.0
+margin_right = 62.0
+margin_bottom = 10.0
+
+[node name="Level2" type="TextureButton" parent="TextureRect/HBoxContainer/TurretOptions"]
+margin_right = 10.0
+margin_bottom = 10.0
+texture_normal = ExtResource( 4 )
+texture_focused = ExtResource( 5 )
+
+[node name="Level3" type="TextureButton" parent="TextureRect/HBoxContainer/TurretOptions"]
+margin_left = 14.0
+margin_right = 24.0
+margin_bottom = 10.0
+texture_normal = ExtResource( 3 )
+texture_focused = ExtResource( 2 )
+
+[node name="LaserOptions" type="HBoxContainer" parent="TextureRect/HBoxContainer"]
+margin_left = 66.0
+margin_right = 90.0
+margin_bottom = 10.0
+
+[node name="Level2" type="TextureButton" parent="TextureRect/HBoxContainer/LaserOptions"]
+margin_right = 10.0
+margin_bottom = 10.0
+texture_normal = ExtResource( 4 )
+texture_focused = ExtResource( 5 )
+
+[node name="Level3" type="TextureButton" parent="TextureRect/HBoxContainer/LaserOptions"]
 margin_left = 14.0
 margin_right = 24.0
 margin_bottom = 10.0
