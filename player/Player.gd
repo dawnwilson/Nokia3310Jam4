@@ -18,8 +18,25 @@ func _ready():
 func getOverlaps() -> void:
 	var space = get_world_2d().direct_space_state
 	var results = space.intersect_point(position, 10, [], 2147483647, true, true)
+	print(results)
+	if results.size() == 0:
+		Global.itemOn = Global.items.EMPTY
+		return
 	for result in results:
-		print(result.collider)
+		if "Mine" in result.collider.name:
+			Global.itemOn = Global.items.MINE
+			return
+		if "Barricade" in result.collider.name:
+			Global.itemOn = Global.items.BARRICADE
+			return
+		if "Turret" in result.collider.name:
+			Global.itemOn = Global.items.TURRET
+			return
+		if "Laser" in result.collider.name:
+			Global.itemOn = Global.items.LASER
+			return
+	
+
 
 func _unhandled_input(event):
 	for dir in inputs.keys():
@@ -35,21 +52,21 @@ func move(dir):
 		position += inputs[dir] * tile_size
 
 
-func _on_Player_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Weapon"):
-		if area.name == "Mine":
-			Global.itemOn = Global.items.MINE
-			print("On Mine")
-		elif area.name == "Barricade":
-			Global.itemOn = Global.items.BARRICADE
-			print("On Barricade")
-		elif area.name == "Turret":
-			Global.itemOn = Global.items.TURRET
-			print("On Turret")
-		elif area.name == "Laser":
-			Global.itemOn = Global.items.LASER
-			print("On Laser")
-		Global.canBuild = false
-
-func _on_Player_area_exited(area: Area2D) -> void:
-	Global.canBuild = true
+#func _on_Player_area_entered(area: Area2D) -> void:
+#	if area.is_in_group("Weapon"):
+#		if area.name == "Mine":
+#			Global.itemOn = Global.items.MINE
+#			print("On Mine")
+#		elif area.name == "Barricade":
+#			Global.itemOn = Global.items.BARRICADE
+#			print("On Barricade")
+#		elif area.name == "Turret":
+#			Global.itemOn = Global.items.TURRET
+#			print("On Turret")
+#		elif area.name == "Laser":
+#			Global.itemOn = Global.items.LASER
+#			print("On Laser")
+#		Global.canBuild = false
+#
+#func _on_Player_area_exited(area: Area2D) -> void:
+#	Global.canBuild = true

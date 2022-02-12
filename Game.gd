@@ -62,11 +62,10 @@ func buildWeapon(weaponType, weaponPrice : int) -> void:
 
 
 func canBuildCheck() -> bool:
-	return Global.canBuild
+	return Global.itemOn == Global.items.EMPTY
 
 
 func explode() -> void:
-	print("Enemy Explodes!")
 	hitAudioPlayer.play()
 
 

@@ -1,12 +1,17 @@
 extends Node
 
+
 signal adjustedScraps 
 
-var canBuild : bool = true
-var scraps := 25 setget setScraps, getScraps
+var scraps := 1200 setget setScraps, getScraps
 var itemOn
 
 enum items {EMPTY, MINE, BARRICADE, TURRET, LASER}
+
+
+func _ready() -> void:
+	itemOn = items.EMPTY
+
 
 func setScraps(amount) -> void:
 	scraps += amount
@@ -15,10 +20,3 @@ func setScraps(amount) -> void:
 
 func getScraps() -> int:
 	return scraps
-
-
-func _process(delta: float) -> void:
-	if canBuild == true:
-		itemOn = items.EMPTY
-	if Input.is_key_pressed(KEY_9):
-		setScraps(150)

@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 func focusOnUpgrade() -> void:
-	print(Global.itemOn)
+	print("Global Item On: " + str(Global.itemOn))
 	if Global.itemOn == Global.items.MINE:
 		turnAllTabsOff()
 		mineTab.visible = true
