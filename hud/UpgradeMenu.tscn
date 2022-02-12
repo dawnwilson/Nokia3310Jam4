@@ -45,9 +45,22 @@ custom_fonts/font = ExtResource( 11 )
 text = "$:"
 valign = 1
 
-[node name="BarricadeOptions" type="HBoxContainer" parent="TextureRect/HBoxContainer"]
+[node name="MineOptions" type="HBoxContainer" parent="TextureRect/HBoxContainer"]
 margin_left = 10.0
-margin_right = 34.0
+margin_right = 54.0
+margin_bottom = 10.0
+
+[node name="NoUpgrades" type="Label" parent="TextureRect/HBoxContainer/MineOptions"]
+margin_top = 1.0
+margin_right = 44.0
+margin_bottom = 9.0
+custom_colors/font_color = Color( 0.298039, 0.298039, 0.298039, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "No Upgrades"
+
+[node name="BarricadeOptions" type="HBoxContainer" parent="TextureRect/HBoxContainer"]
+margin_left = 58.0
+margin_right = 82.0
 margin_bottom = 10.0
 
 [node name="Level2" type="TextureButton" parent="TextureRect/HBoxContainer/BarricadeOptions"]
@@ -64,8 +77,8 @@ texture_normal = ExtResource( 3 )
 texture_focused = ExtResource( 2 )
 
 [node name="TurretOptions" type="HBoxContainer" parent="TextureRect/HBoxContainer"]
-margin_left = 38.0
-margin_right = 62.0
+margin_left = 86.0
+margin_right = 110.0
 margin_bottom = 10.0
 
 [node name="Level2" type="TextureButton" parent="TextureRect/HBoxContainer/TurretOptions"]
@@ -82,8 +95,8 @@ texture_normal = ExtResource( 3 )
 texture_focused = ExtResource( 2 )
 
 [node name="LaserOptions" type="HBoxContainer" parent="TextureRect/HBoxContainer"]
-margin_left = 66.0
-margin_right = 90.0
+margin_left = 114.0
+margin_right = 138.0
 margin_bottom = 10.0
 
 [node name="Level2" type="TextureButton" parent="TextureRect/HBoxContainer/LaserOptions"]

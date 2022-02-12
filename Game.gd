@@ -54,6 +54,7 @@ func buildWeapon(weaponType, weaponPrice : int) -> void:
 			$Weapons.add_child(newWeapon)
 			Global.setScraps(-weaponPrice)
 			buildAudioPlayer.play()
+			$Player.getOverlaps()
 		else:
 			print("Can't Build There!")
 	else:
@@ -67,3 +68,7 @@ func canBuildCheck() -> bool:
 func explode() -> void:
 	print("Enemy Explodes!")
 	hitAudioPlayer.play()
+
+
+func updateUpgradeTab() -> void:
+	upgradeMenu.focusOnUpgrade()
