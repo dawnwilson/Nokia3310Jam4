@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func focusOnUpgrade() -> void:
 	print("Global Item On: " + str(Global.itemOn))
-	if Global.itemOn == Global.items.MINE:
+	if Global.itemOn == Global.items.MINE || Global.items.EMPTY:
 		turnAllTabsOff()
 		mineTab.visible = true
 		mineTab.get_child(0).grab_focus()

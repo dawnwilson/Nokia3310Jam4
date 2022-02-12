@@ -13,6 +13,7 @@ var isUpgradeOpen = false
 
 func _ready() -> void:
 	buildTaskBar.visible = false
+	$Player.connect("playerMoved", self, "checkIfUpgradeOpen")
 	$TaskBar/BuildMenu.connect("buildWeapon", self, "buildWeapon")
 
 
@@ -71,3 +72,8 @@ func explode() -> void:
 
 func updateUpgradeTab() -> void:
 	upgradeMenu.focusOnUpgrade()
+
+
+func checkIfUpgradeOpen() -> void:
+	if isUpgradeOpen:
+		updateUpgradeTab()

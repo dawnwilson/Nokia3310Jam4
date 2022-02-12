@@ -1,5 +1,6 @@
 extends Area2D
 
+signal playerMoved
 
 onready var ray = $RayCast2D
 var tile_size = 6
@@ -43,6 +44,7 @@ func _unhandled_input(event):
 		if event.is_action_pressed(dir):
 			move(dir)
 			getOverlaps()
+			emit_signal("playerMoved")
 
 
 func move(dir):
