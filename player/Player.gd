@@ -52,23 +52,3 @@ func move(dir):
 	ray.force_raycast_update()
 	if !ray.is_colliding():
 		position += inputs[dir] * tile_size
-
-
-#func _on_Player_area_entered(area: Area2D) -> void:
-#	if area.is_in_group("Weapon"):
-#		if area.name == "Mine":
-#			Global.itemOn = Global.items.MINE
-#			print("On Mine")
-#		elif area.name == "Barricade":
-#			Global.itemOn = Global.items.BARRICADE
-#			print("On Barricade")
-#		elif area.name == "Turret":
-#			Global.itemOn = Global.items.TURRET
-#			print("On Turret")
-#		elif area.name == "Laser":
-#			Global.itemOn = Global.items.LASER
-#			print("On Laser")
-#		Global.canBuild = false
-#
-#func _on_Player_area_exited(area: Area2D) -> void:
-#	Global.canBuild = true

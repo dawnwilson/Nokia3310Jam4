@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Laser.png-7c921d7aedaeb1a1cdec7bd62bab1988.stex"
+path="res://.import/LaserBeam.png-62b7bf80f813ddc75dfe15bccfa9e1bb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Weapons/Laser.png"
-dest_files=[ "res://.import/Laser.png-7c921d7aedaeb1a1cdec7bd62bab1988.stex" ]
+source_file="res://assets/Weapons/LaserBeam.png"
+dest_files=[ "res://.import/LaserBeam.png-62b7bf80f813ddc75dfe15bccfa9e1bb.stex" ]
 
 [params]
 
