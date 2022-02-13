@@ -19,22 +19,25 @@ func _ready():
 func getOverlaps() -> void:
 	var space = get_world_2d().direct_space_state
 	var results = space.intersect_point(position, 10, [], 2147483647, true, true)
-	print(results)
 	if results.size() == 0:
 		Global.itemOn = Global.items.EMPTY
 		return
 	for result in results:
 		if "Mine" in result.collider.name:
 			Global.itemOn = Global.items.MINE
+			Global.exactWeaponOn = result.collider.name
 			return
 		if "Barricade" in result.collider.name:
 			Global.itemOn = Global.items.BARRICADE
+			Global.exactWeaponOn = result.collider.name
 			return
 		if "Turret" in result.collider.name:
 			Global.itemOn = Global.items.TURRET
+			Global.exactWeaponOn = result.collider.name
 			return
 		if "Laser" in result.collider.name:
 			Global.itemOn = Global.items.LASER
+			Global.exactWeaponOn = result.collider.name
 			return
 	
 

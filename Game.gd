@@ -15,6 +15,7 @@ func _ready() -> void:
 	buildTaskBar.visible = false
 	$Player.connect("playerMoved", self, "checkIfUpgradeOpen")
 	$TaskBar/BuildMenu.connect("buildWeapon", self, "buildWeapon")
+	upgradeMenu.connect("upgradeWeapon", self, "upgradeWeapon")
 
 
 func _process(delta: float) -> void:
@@ -77,3 +78,9 @@ func updateUpgradeTab() -> void:
 func checkIfUpgradeOpen() -> void:
 	if isUpgradeOpen:
 		updateUpgradeTab()
+
+
+func upgradeWeapon() -> void:
+	var weaponContainer = $Weapons
+	var weaponNode = weaponContainer.get_node(Global.exactWeaponOn)
+	weaponNode.queue_free()

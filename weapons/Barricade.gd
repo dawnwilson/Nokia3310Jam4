@@ -4,7 +4,7 @@ extends Area2D
 var level1Sprite = load("res://assets/Weapons/Barricade.png")
 var level2Sprite = load("res://assets/Weapons/Barricade_Level2.png")
 
-var level = 1
+var level := 1
 
 
 func _on_Barricade_body_entered(body: Node) -> void:

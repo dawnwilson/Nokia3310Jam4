@@ -1,7 +1,7 @@
 extends Area2D
 
 var beam = preload("res://weapons/LaserBeam.tscn")
-
+var level := 1
 
 func _ready() -> void:
 	var newBeam1 = beam.instance()

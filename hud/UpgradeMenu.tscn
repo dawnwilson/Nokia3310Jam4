@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/TaskBarBG.png" type="Texture" id=1]
 [ext_resource path="res://assets/Menu Icons/TurretLvl2Upgrade_Normal.png" type="Texture" id=2]
 [ext_resource path="res://assets/Menu Icons/TurretLvl2Upgrade_Focus.png" type="Texture" id=3]
-[ext_resource path="res://assets/Menu Icons/Icon_Barricade-L2_Normal.png" type="Texture" id=4]
-[ext_resource path="res://assets/Menu Icons/Icon_Barricade-L2_Focus.png" type="Texture" id=5]
+[ext_resource path="res://assets/Menu Icons/LaserLvl2Upgrade_Normal.png" type="Texture" id=4]
+[ext_resource path="res://assets/Menu Icons/BarricadeLvl2Upgrade_Focus.png" type="Texture" id=5]
 [ext_resource path="res://hud/UpgradeMenu.gd" type="Script" id=6]
+[ext_resource path="res://assets/Menu Icons/LaserLvl2Upgrade_Focus.png" type="Texture" id=7]
+[ext_resource path="res://assets/Menu Icons/BarricadeLvl2Upgrade_Normal.png" type="Texture" id=8]
 [ext_resource path="res://fonts/6px_8.tres" type="DynamicFont" id=11]
 
 [sub_resource type="StyleBoxLine" id=1]
@@ -42,9 +44,9 @@ __meta__ = {
 }
 
 [node name="ScrapsLabel" type="Label" parent="TextureRect/HBoxContainer"]
-margin_left = 11.0
+margin_left = 34.0
 margin_top = 1.0
-margin_right = 17.0
+margin_right = 40.0
 margin_bottom = 9.0
 custom_colors/font_color = Color( 0.262745, 0.321569, 0.239216, 1 )
 custom_fonts/font = ExtResource( 11 )
@@ -52,58 +54,96 @@ text = "$:"
 valign = 1
 
 [node name="VSeparator" type="VSeparator" parent="TextureRect/HBoxContainer"]
-margin_left = 21.0
-margin_right = 22.0
+margin_left = 44.0
+margin_right = 45.0
 margin_bottom = 10.0
 custom_constants/separation = 1
 custom_styles/separator = SubResource( 1 )
 
 [node name="MineOptions" type="HBoxContainer" parent="TextureRect/HBoxContainer"]
 visible = false
-margin_left = 10.0
-margin_right = 54.0
-margin_bottom = 14.0
+margin_left = 15.0
+margin_right = 59.0
+margin_bottom = 10.0
 
 [node name="NoUpgrades" type="Label" parent="TextureRect/HBoxContainer/MineOptions"]
-margin_top = 3.0
+visible = false
+margin_top = 1.0
 margin_right = 44.0
-margin_bottom = 11.0
+margin_bottom = 9.0
 custom_colors/font_color = Color( 0.298039, 0.298039, 0.298039, 1 )
 custom_fonts/font = ExtResource( 11 )
 text = "No Upgrades"
 
 [node name="BarricadeOptions" type="HBoxContainer" parent="TextureRect/HBoxContainer"]
 visible = false
-margin_left = 58.0
-margin_right = 82.0
-margin_bottom = 14.0
+margin_left = 29.0
+margin_right = 66.0
+margin_bottom = 10.0
 
-[node name="Level2" type="TextureButton" parent="TextureRect/HBoxContainer/BarricadeOptions"]
-margin_right = 10.0
-margin_bottom = 14.0
-texture_normal = ExtResource( 4 )
+[node name="upgrade" type="TextureButton" parent="TextureRect/HBoxContainer/BarricadeOptions"]
+visible = false
+margin_right = 37.0
+margin_bottom = 10.0
+texture_normal = ExtResource( 8 )
 texture_focused = ExtResource( 5 )
 
+[node name="NoUpgrades" type="Label" parent="TextureRect/HBoxContainer/BarricadeOptions"]
+visible = false
+margin_left = 41.0
+margin_top = 1.0
+margin_right = 85.0
+margin_bottom = 9.0
+custom_colors/font_color = Color( 0.298039, 0.298039, 0.298039, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "No Upgrades"
+
 [node name="TurretOptions" type="HBoxContainer" parent="TextureRect/HBoxContainer"]
+visible = false
 margin_left = 26.0
 margin_right = 69.0
 margin_bottom = 10.0
 
-[node name="lvl2" type="TextureButton" parent="TextureRect/HBoxContainer/TurretOptions"]
+[node name="upgrade" type="TextureButton" parent="TextureRect/HBoxContainer/TurretOptions"]
+visible = false
 margin_right = 43.0
 margin_bottom = 10.0
 texture_normal = ExtResource( 2 )
 texture_focused = ExtResource( 3 )
 
+[node name="NoUpgrades" type="Label" parent="TextureRect/HBoxContainer/TurretOptions"]
+visible = false
+margin_left = 47.0
+margin_top = 1.0
+margin_right = 91.0
+margin_bottom = 9.0
+custom_colors/font_color = Color( 0.298039, 0.298039, 0.298039, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "No Upgrades"
+
 [node name="LaserOptions" type="HBoxContainer" parent="TextureRect/HBoxContainer"]
 visible = false
-margin_left = 133.0
-margin_right = 171.0
-margin_bottom = 14.0
+margin_left = 29.0
+margin_right = 66.0
+margin_bottom = 10.0
 
-[node name="Level2" type="TextureButton" parent="TextureRect/HBoxContainer/LaserOptions"]
+[node name="upgrade" type="TextureButton" parent="TextureRect/HBoxContainer/LaserOptions"]
 visible = false
-margin_right = 10.0
-margin_bottom = 14.0
+margin_right = 37.0
+margin_bottom = 10.0
 texture_normal = ExtResource( 4 )
-texture_focused = ExtResource( 5 )
+texture_focused = ExtResource( 7 )
+
+[node name="NoUpgrades" type="Label" parent="TextureRect/HBoxContainer/LaserOptions"]
+visible = false
+margin_left = 41.0
+margin_top = 1.0
+margin_right = 85.0
+margin_bottom = 9.0
+custom_colors/font_color = Color( 0.298039, 0.298039, 0.298039, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "No Upgrades"
+
+[connection signal="pressed" from="TextureRect/HBoxContainer/BarricadeOptions/upgrade" to="." method="_on_Barricade_upgrade_pressed"]
+[connection signal="pressed" from="TextureRect/HBoxContainer/TurretOptions/upgrade" to="." method="_on_Turret_upgrade_pressed"]
+[connection signal="pressed" from="TextureRect/HBoxContainer/LaserOptions/upgrade" to="." method="_on_Laser_upgrade_pressed"]

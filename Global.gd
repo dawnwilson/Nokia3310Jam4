@@ -5,6 +5,7 @@ signal adjustedScraps
 
 var scraps := 1200 setget setScraps, getScraps
 var itemOn
+var exactWeaponOn
 
 enum items {EMPTY, MINE, BARRICADE, TURRET, LASER}
 
