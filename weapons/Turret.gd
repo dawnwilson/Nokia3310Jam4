@@ -2,7 +2,7 @@ extends Area2D
 
 
 var bullet = preload("res://weapons/Bullet.tscn")
-var level := 1
+onready var level := 1
 
 
 func _on_Turret_body_entered(body: Node) -> void:
@@ -19,7 +19,9 @@ func _on_ShootTimer_timeout() -> void:
 	weaponContainer.add_child(newBullet)
 
 
-func upgradeTurret() -> void:
+func upgradeWeapon() -> void:
 	if level == 1:
-		print("Upgrade Turret to Level 2...")
-		
+		level = 2
+		$ShootTimer.wait_time = 6
+	elif level == 2:
+		$ShootTimer.wait_time = 4

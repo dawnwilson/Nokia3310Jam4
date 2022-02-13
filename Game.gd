@@ -81,6 +81,9 @@ func checkIfUpgradeOpen() -> void:
 
 
 func upgradeWeapon() -> void:
+	if Global.exactWeaponOn == null:
+		return
+		
 	var weaponContainer = $Weapons
 	var weaponNode = weaponContainer.get_node(Global.exactWeaponOn)
-	weaponNode.queue_free()
+	weaponNode.upgradeWeapon()

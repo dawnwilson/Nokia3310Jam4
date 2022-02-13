@@ -21,7 +21,9 @@ func getOverlaps() -> void:
 	var results = space.intersect_point(position, 10, [], 2147483647, true, true)
 	if results.size() == 0:
 		Global.itemOn = Global.items.EMPTY
+		Global.exactWeaponOn = null
 		return
+		
 	for result in results:
 		if "Mine" in result.collider.name:
 			Global.itemOn = Global.items.MINE
@@ -39,7 +41,6 @@ func getOverlaps() -> void:
 			Global.itemOn = Global.items.LASER
 			Global.exactWeaponOn = result.collider.name
 			return
-	
 
 
 func _unhandled_input(event):
