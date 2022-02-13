@@ -10,17 +10,25 @@ onready var mineTab = $TextureRect/HBoxContainer/MineOptions
 onready var barricadeTab = $TextureRect/HBoxContainer/BarricadeOptions
 onready var turretTab = $TextureRect/HBoxContainer/TurretOptions
 onready var laserTab = $TextureRect/HBoxContainer/LaserOptions
+onready var scrapsLabel = $TextureRect/HBoxContainer/ScrapsLabel
 
 
 func _ready() -> void:
+	Global.connect("adjustedScraps", self, "updateScrapsLabel")
 	turnAllTabsOff()
 	visible = false
 
 
+func updateScrapsLabel(amount) -> void:
+	scrapsLabel.text = "$:" + str(amount)
+
+
 func focusOnUpgrade() -> void:
-	if Global.itemOn == Global.items.MINE || Global.items.EMPTY:
+	updateScrapsLabel(Global.scraps)
+	if Global.itemOn == Global.items.MINE || Global.itemOn == Global.items.EMPTY:
 		turnAllTabsOff()
 		mineTab.visible = true
+		mineTab.get_node("NoUpgrades").visible = true
 		mineTab.get_child(0).grab_focus()
 	if Global.itemOn == Global.items.BARRICADE:
 		turnAllTabsOff()

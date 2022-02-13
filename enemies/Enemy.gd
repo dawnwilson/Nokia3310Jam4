@@ -5,7 +5,7 @@ onready var ray = $RayCast2D
 onready var audioPlayer = $AudioStreamPlayer
 
 var tile_size = 6
-const ENEMY_WORTH := 25
+const ENEMY_WORTH := 15
 
 
 func _ready():

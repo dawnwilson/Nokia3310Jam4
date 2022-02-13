@@ -16,6 +16,7 @@ func _ready() -> void:
 func _on_Barricade_body_entered(body: Node) -> void:
 	print("Level before hit: " + str(level))
 	if body.is_in_group("Enemies"):
+		$AudioStreamPlayer.play()
 		if level == 3:
 			body.queue_free()
 			level = 2
@@ -26,6 +27,9 @@ func _on_Barricade_body_entered(body: Node) -> void:
 			$Sprite.texture = level1Sprite
 		elif level == 1:
 			body.queue_free()
+			$CollisionShape2D.disabled = true
+			$Sprite.visible = false
+			yield($AudioStreamPlayer, "finished")
 			queue_free()
 	print("Level after hit: " + str(level))
 

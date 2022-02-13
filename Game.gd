@@ -44,6 +44,7 @@ func _process(delta: float) -> void:
 	
 
 func gameOver() -> void:
+	Global.endTime = OS.get_unix_time()
 	get_tree().change_scene_to(endScreen)
 
 

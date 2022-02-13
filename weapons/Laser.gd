@@ -20,7 +20,11 @@ func _on_Laser_body_entered(body: Node) -> void:
 		Global.canBuild = false
 		Global.itemOn = Global.items.LASER
 	if body.is_in_group("Enemies"):
+		$AudioStreamPlayer.play()
 		body.queue_free()
+		$CollisionShape2D.disabled = true
+		$AnimatedSprite.visible = false
+		yield($AudioStreamPlayer, "finished")
 		queue_free()
 
 

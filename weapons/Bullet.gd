@@ -14,5 +14,9 @@ func _on_VisibilityNotifier2D_screen_exited() -> void:
 
 func _on_Bullet_body_entered(body: Node) -> void:
 	if body.is_in_group("Enemies"):
+		$AudioStreamPlayer.play()
 		body.queue_free()
+		$CollisionShape2D.disabled = true
+		$Sprite.visible = false
+		yield($AudioStreamPlayer, "finished")
 		queue_free()

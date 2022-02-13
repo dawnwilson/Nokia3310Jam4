@@ -3,9 +3,11 @@ extends Node
 
 signal adjustedScraps 
 
-var scraps := 1200 setget setScraps, getScraps
+var scraps := 150 setget setScraps, getScraps
 var itemOn
 var exactWeaponOn
+var startTime
+var endTime
 
 enum items {EMPTY, MINE, BARRICADE, TURRET, LASER}
 
